@@ -1,0 +1,5 @@
+<br><h2><%= @author.username %></h2>
+<p><strong>Email:</strong> <%= @author.email %></p>
+
+<%= link_to 'Back', authors_path %> | <%= link_to 'Edit', edit_author_path(@author) %> | <%= button_to "Delete", author_path(@author), method: :delete %>
+

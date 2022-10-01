@@ -1,0 +1,7 @@
+<br><h2>Reviews:</h2>
+<% @reviews.each do |p| %>
+  <div>
+    <p class="list-group-item album-item"><%= link_to (p.album.title), album_path(p.album)%> | by: <%= p.album.band %><p>
+    <p><%= p.review %></p>
+  </div>
+<% end %>

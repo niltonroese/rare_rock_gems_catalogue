@@ -1,0 +1,50 @@
+<br><h3>
+  <%= @album.title %>
+</h3>
+
+<div class="row jumbotron">
+
+    <div class="col-md-3">
+        <%= image_tag @album.image, height: '250px', class:"profile-image" %>
+    </div>
+
+    <div class="col-md-9 album-info">
+
+        <p>
+        <strong>Band:</strong> <%= @album.band %><br>
+        </p>
+
+        <p>
+        <strong>Origin:</strong> <%= @album.origin %><br>
+        </p>
+
+        <p>
+        <strong>Genre:</strong> <%= @album.genre %><br>
+        </p>
+
+        <p>
+        <strong>Release:</strong> <%= @album.release %><br>
+        </p>
+
+        <p>
+        <strong>Single:</strong> <%= @album.single %>
+        </p>
+
+        <p>
+        <%= link_to "Check out the album on Deezer", @album.album_link, target: '_blank' %>
+        </p>
+
+    </div>
+</div>
+
+    <div class="row jumbotron">
+        <div class="col-md-3">
+        <h5><strong>Author: </strong><%= @album.reviews.first.author.username %></h5>
+    </div>
+
+    <div class="col-md-9 album-info">   
+        <p><strong>Review: </strong><%= @album.reviews.first.review %></p>
+    </div>
+
+<%= link_to 'Back', albums_path %><br>
+<%= link_to 'New Review', new_album_review_path(@album) %>

@@ -1,0 +1,22 @@
+<br><h2>Update an Author</h2>
+
+<% if @author.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+  <ul>
+    <% @author.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for @author do |f| %>
+  <%= label_tag "username", "Username" %>
+  <%= f.text_field :username %><br>
+  <%= label_tag "email", "Email" %>
+  <%= f.email_field :email %><br>
+  <%= f.submit "Update" %><br>
+<% end %>
+<%= button_to "Delete", authors_path, method: "get" %>

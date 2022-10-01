@@ -1,0 +1,35 @@
+<br><h2>Create an Album</h2>
+
+<% if @album.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+  <ul>
+    <% @album.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for @album do |f| %>
+  <%= label_tag "title", "Title" %>
+  <%= f.text_field :title%><br>
+  <%= label_tag "image", "Image" %>
+  <%= f.text_field :image %><br>
+  <%= label_tag "band", "Band" %>
+  <%= f.text_field :band%><br>
+  <%= label_tag "origin", "Origin" %>
+  <%= f.text_field :origin %><br>
+  <%= label_tag "genre", "Genre" %>
+  <%= f.text_field :genre %><br>
+  <%= label_tag "release", "Release" %>
+  <%= f.text_field :release %><br>
+  <%= label_tag "single", "Single" %>
+  <%= f.text_field :single %><br>
+  <%= label_tag "album_link", "Album_link" %>
+  <%= f.text_field :album_link %><br>
+  <%= f.submit "Create" %><br>
+<% end %>
+<br>
+<%= button_to "Delete", albums_path, method: "get" %>

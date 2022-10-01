@@ -1,0 +1,10 @@
+<br><h2>Authors:</h2>
+<ul>
+  <% @authors.each do |author| %>
+    <li class="list-group-item album-item"><%= link_to author.username, author_path(author) %></li><br>
+  <% end %>
+</ul>
+
+<br>
+
+<%= link_to 'New Author', new_author_path %>
