@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_25_011900) do
+ActiveRecord::Schema.define(version: 2022_10_01_065617) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2022_09_25_011900) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
   end
 
   create_table "reviews", force: :cascade do |t|

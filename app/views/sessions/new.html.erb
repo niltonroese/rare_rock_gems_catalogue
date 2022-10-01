@@ -1,9 +1,14 @@
-<h1>Login!</h1>
+<br><h1>Login!</h1>
 
 <%= form_with url:login_path do |f| %>
-    <%= f.label "username" %>
-    <%= f.text_field :username %><br>
+    <%= f.label "email" %>
+    <%= f.text_field :email %><br>
     <%= f.label "password" %>
     <%= f.password_field :password %><br>
     <%= f.submit "Login" %><br>
 <% end %>
+<br>
+
+<h1>Or Login via Google!</h1>
+
+<%= button_to 'Google', '/auth/google_oauth2' %>

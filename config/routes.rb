@@ -4,6 +4,7 @@ post '/signup', to: 'authors#create'
 get '/login', to: 'sessions#new'
 post '/login', to: 'sessions#create'
 get '/logout', to: 'sessions#destroy'
+get '/auth/:provider/callback', to: 'sessions#omniauth'
 
   root 'albums#index'
   resources :authors
@@ -12,7 +13,6 @@ get '/logout', to: 'sessions#destroy'
   end
   resources :reviews
     # resources :albums
-  # get '/auth/:provider/callback' => 'sessions#omniauth'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
