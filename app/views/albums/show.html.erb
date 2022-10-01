@@ -36,15 +36,21 @@
 
     </div>
 </div>
-
-    <div class="row jumbotron">
-        <div class="col-md-3">
-        <h5><strong>Author: </strong><%= @album.reviews.first.author.username %></h5>
+<br>
+<div class="row jumbotron">
+    <div class="col-md-3 album-item badge bg-info">
+        <% @album.reviews.each do |p| %>
+        <h6><%= p.author.username %></h6>
+        <% end %>
     </div>
 
-    <div class="col-md-9 album-info">   
-        <p><strong>Review: </strong><%= @album.reviews.first.review %></p>
+    <div class="col-md-9 badge bg-primary text-start">
+        <% @album.reviews.each do |p| %>
+        <h6><%= p.review %></h6>
+        <% end %>
     </div>
-
+</div>
+    
 <%= link_to 'Back', albums_path %><br>
-<%= link_to 'New Review', new_album_review_path(@album) %>
+<%= link_to 'New Review', new_album_review_path(@album) %><br>
+

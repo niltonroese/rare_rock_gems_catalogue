@@ -16,12 +16,10 @@
   <%= label_tag "review", "Review" %>
 
   <%= f.hidden_field :album_id %>
-  <%= f.hidden_field :author_id%>
-
+  <%= f.hidden_field :author_id, :value => current_author.id %>
+  
   <%= f.text_field :review %><br>
  
   <%= f.submit "Create" %><br>
 <% end %>
 <br>
-
-<%= button_to "Delete", reviews_path, method: "get" %>

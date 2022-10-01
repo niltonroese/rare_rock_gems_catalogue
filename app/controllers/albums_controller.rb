@@ -1,4 +1,7 @@
 class AlbumsController < ApplicationController
+
+    before_action :require_author, only: [:index, :show, :new]
+
     def index
         @albums = Album.all
     end
